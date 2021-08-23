@@ -4,8 +4,8 @@ public class CalculationEquipmentKinguios extends MeasuresAndCalculations {
 	
 	void heating() {
 		thermostat = realCapacity * 1.0;
-		System.out.println("Potência do Termostato Aproximada= " + thermostat +
-				" watts");
+		System.out.println("Potência do Termostato Aproximada= " +
+		formatting.format(thermostat) + " watts");
 	}
 	
 	

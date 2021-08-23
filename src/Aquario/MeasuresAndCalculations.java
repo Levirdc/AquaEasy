@@ -6,11 +6,13 @@ import java.util.Scanner;
 public abstract class MeasuresAndCalculations {
 	
 	 double length, height, width, totalCapacity, realCapacity;
+	 
+	 Scanner dataEntry = new Scanner(System.in);
+	 DecimalFormat formatting = new DecimalFormat("#0.00");
      
 	 public MeasuresAndCalculations() {
 		
-		Scanner dataEntry = new Scanner(System.in);
-		DecimalFormat formatting = new DecimalFormat("#0.00");
+		
 		
 		System.out.println("Insira as Medidas do Aquário");
 		System.out.print("Comprimento= ");
@@ -40,24 +42,25 @@ public abstract class MeasuresAndCalculations {
 	
 	void amountOfGravel() {
 		gravel = length * width * 5 / 1000;
-		System.out.println("Quantidade de Cascalho Aproximado= " + gravel +
-				" Kg");
+		System.out.println("Quantidade Aproximada de Cascalho = " + 
+		formatting.format(gravel) + " Kg");
 	}
 	
 	void filtering() {
 		filter = realCapacity * 5;
-		System.out.println("Filtragem Ideal Aproximada= " + filter + " L/h");
+		System.out.println("Filtragem Ideal Aproximada= " + 
+		formatting.format(filter) + " L/h");
 	}
 	
 	void heating() {
 		thermostat = realCapacity * 1.3;
-		System.out.println("Potência do Termostato Aproximado= " + thermostat +
-				" watts");
+		System.out.println("Potência Aproximada do Termostato = " +
+		formatting.format(thermostat) + " watts");
 	}
 	
 	void luminosity() {
 		lighting = realCapacity * 0.9;
-		System.out.println("Iluminação Ideal Aproximada= " + lighting + 
-				" watts");
+		System.out.println("Iluminação Ideal Aproximada= " + 
+		formatting.format(lighting) + " watts");
 	}
 }
